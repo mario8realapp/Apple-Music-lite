@@ -16,7 +16,7 @@ jobs:
       - name: Descomprimir proyecto
         run: |
           mkdir project
-          unzip MusicTVLite_iPhone.zip -d project
+          unzip MusicTVLite_iPhone_FIXED.zip -d project
 
       - name: Instalar Java
         uses: actions/setup-java@v4
