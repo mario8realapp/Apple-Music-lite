@@ -1,4 +1,4 @@
-name: Compilar y publicar APK v1.1
+name: Compilar y publicar APK v1.2
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ jobs:
       - name: Descomprimir proyecto
         run: |
           mkdir project
-          unzip MusicTVLite_v1.1_GitHubReady.zip -d project
+          unzip MusicTVLite_v1.2_GitHubReady.zip -d project
 
       - name: Instalar Java
         uses: actions/setup-java@v4
@@ -36,15 +36,15 @@ jobs:
           gradle-version: '8.9'
 
       - name: Compilar APK
-        working-directory: project/MusicTVLite_v1_1
+        working-directory: project/MusicTVLite_v1_2
         run: gradle assembleDebug
 
       - name: Preparar APK
-        run: cp project/MusicTVLite_v1_1/app/build/outputs/apk/debug/app-debug.apk MusicTVLite-v1.1.apk
+        run: cp project/MusicTVLite_v1_2/app/build/outputs/apk/debug/app-debug.apk MusicTVLite-v1.2.apk
 
       - name: Publicar Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.1
-          name: MusicTV Lite v1.1
-          files: MusicTVLite-v1.1.apk
+          tag_name: v1.2
+          name: MusicTV Lite v1.2
+          files: MusicTVLite-v1.2.apk
