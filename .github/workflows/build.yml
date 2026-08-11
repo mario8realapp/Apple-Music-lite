@@ -16,10 +16,10 @@ jobs:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
-      - name: Descomprimir proyecto
+      -       - name: Descomprimir proyecto
         run: |
           mkdir project
-          MusicTVLite_v1.1_GitHubReady.zip
+          unzip MusicTVLite_v1.1_GitHubReady.zip -d project
 
       - name: Instalar Java
         uses: actions/setup-java@v4
